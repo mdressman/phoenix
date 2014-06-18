@@ -14,24 +14,29 @@ div(ng-include='\'partials/navbar\'')
 .row-fluid
   .col-sm-6(ng-repeat='user in userStats')
     .user-card
-      .profile
-        
-        img.avatar(src='{{user.avatar}}')
-        span.no-avatar(ng-hide="user.avatar != ''") {{user.name.charAt(0)}}
-        h4 {{user.name}}
-        p {{user.occupation}}
-      .stats
-        p.impressions {{user.impressions}}
-          br
-          | impressions
-        p.conversions {{user.conversions}}
-          br
-          | conversions
-        p.revenue {{user.revenue}}
+      .profile.row-fluid
+          .col-sm-3
+            img.avatar(src='{{user.avatar}}' ng-hide="user.avatar == ''")
+            span.no-avatar(ng-hide="user.avatar != ''") {{user.name.charAt(0)}}
+          .col-sm-9
+            h4 {{user.name}}
+            h5 {{user.occupation}}
+      .stats.row-fluid
+        .chart.col-sm-8
+        .vals.col-sm-4
+          p
+            span.impressions {{user.impressions}}
+            br
+            | impressions
+          p
+            span.conversions {{user.conversions}}
+            br
+            | conversions
+          p.revenue {{user.revenue}}
 
       .clearfix
 
 .clearfix
 
 .footer
-  p ♥ from the Yeoman team
+  p with ♥ from Matthew Dressman
