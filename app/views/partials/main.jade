@@ -12,9 +12,15 @@ div(ng-include='\'partials/navbar\'')
 //-     a.btn.btn-lg.btn-success(ng-href='#') Splendid!
 
 .row.marketing
-  div(ng-repeat='user in userData')
-    h4 {{user.name}}
-    p {{user.occupation}}
+  div.col-sm-6(ng-repeat='user in userStats')
+    div.profile
+      img.avatar(src='{{user.avatar}}')
+      h4 {{user.name}}
+      p {{user.occupation}}
+    div.stats
+      p {{user.impressions}}
+      p {{user.conversions}}
+      p {{user.revenue}}
 
 .footer
   p ♥ from the Yeoman team

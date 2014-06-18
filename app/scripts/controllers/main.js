@@ -3,14 +3,8 @@
 angular.module('phoenixApp')
   .controller('MainCtrl', function ($scope, $http) {
 
-    $http.get('/data/users').success(function(userData) {
-      $scope.userData = userData;
+    $http.get('/api/user_stats').success(function(userStats) {
+      $scope.userStats = userStats;
     });
-
-    $http.get('/data/logs').success(function(logData) {
-      $scope.logData = logData;
-      debugger;
-    });
-
 
   });
