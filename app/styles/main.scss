@@ -67,13 +67,26 @@ body {
 
 .profile {
     width: 100%;
-    
 
     img.avatar {
         border-radius: 50%;
         float: left;
         width: 80px;
     }
+
+    span.no-avatar {
+        display: block;
+
+        width: 80px;
+        height: 80px;
+        background: #38B7F2;
+        float: left;
+        border-radius: 50%;
+        padding: 10px 0 0 27px;
+        font-size: 4rem;
+        color: #ffffff;
+    }
+
 }
 .stats {
     width: 40%;

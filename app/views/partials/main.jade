@@ -15,7 +15,9 @@ div(ng-include='\'partials/navbar\'')
   .col-sm-6(ng-repeat='user in userStats')
     .user-card
       .profile
+        
         img.avatar(src='{{user.avatar}}')
+        span.no-avatar(ng-hide="user.avatar != ''") {{user.name.charAt(0)}}
         h4 {{user.name}}
         p {{user.occupation}}
       .stats
@@ -28,6 +30,8 @@ div(ng-include='\'partials/navbar\'')
         p.revenue {{user.revenue}}
 
       .clearfix
+
+.clearfix
 
 .footer
   p ♥ from the Yeoman team
