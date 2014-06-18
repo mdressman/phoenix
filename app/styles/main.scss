@@ -58,14 +58,29 @@ body {
     padding: 14px 24px;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
+/* MD CUSTOM */
+.user-card {
+    background: #cccccc;
+    padding: 10px;
+    border-radius: 20px;
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+.profile {
+    width: 100%;
+    
+
+    img.avatar {
+        border-radius: 50%;
+        float: left;
+        width: 80px;
+    }
 }
+.stats {
+    width: 40%;
+    float: right;
+}
+
+/* MD END */
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
