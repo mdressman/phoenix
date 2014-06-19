@@ -9,11 +9,19 @@ app.controller('MainCtrl', function ($scope, $http) {
   });
 
   $scope.showChart = function(user) {
-    console.log(user.events_by_day);
     $.plot(
-      $('#flot-'+user.id),
-      [ user.events_by_day ],
-      { xaxis: { min: 1, max: 30 } }
+      $('#flot-'+user.id), [{
+        data: user.events_by_day,
+        color: "#393939"
+      }],
+      { 
+        xaxis: { min: 1, max: 30 },
+        series: {
+          lines: { show: true },
+          points: { show:false }
+        },
+        grid: { show: false }
+      }
     );
   }
 

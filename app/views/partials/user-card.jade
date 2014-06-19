@@ -9,6 +9,7 @@
   .stats.row-fluid
     .chart.col-sm-8
       div(class='flot-chart' id='flot-{{user.id}}' ng-bind-html='showChart(user)')
+      .chart-label Conversions {{user.dates[0].substr(5,5)}} - {{user.dates[user.dates.length-1].substr(5,5)}}
     .vals.col-sm-4
       p
         span.impressions {{user.impressions}}
