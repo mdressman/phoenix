@@ -2,13 +2,16 @@
   .profile.row-fluid
       .col-sm-3
         img.avatar(src='{{user.avatar}}' ng-hide="user.avatar == ''")
+        //- hide is we have an avatar, otherwise just show first letter of name
         span.no-avatar(ng-hide="user.avatar != ''") {{user.name.charAt(0)}}
       .col-sm-9
         h4 {{user.name}}
         h5 {{user.occupation}}
   .stats.row-fluid
     .chart.col-sm-8
+      //- call showChart function with ref to the user data to display chart
       div(class='flot-chart' id='flot-{{user.id}}' ng-bind-html='showChart(user)')
+      //- parse out dates from data for chart label
       .chart-label Conversions {{user.dates[0].substr(5,5)}} - {{user.dates[user.dates.length-1].substr(5,5)}}
     .vals.col-sm-4
       p
